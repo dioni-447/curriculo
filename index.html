@@ -1,205 +1,478 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Currículo - João Vitor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículo — João Vitor Santos Goulart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <!-- Fonte moderna -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    :root {
+      --color-text-primary: #1a1a18;
+      --color-text-secondary: #5a5a56;
+      --color-text-tertiary: #8a8a85;
+      --color-border-primary: #b0afa8;
+      --color-border-secondary: #d0cfc8;
+      --color-border-tertiary: #e4e3dc;
+      --color-bg: #faf9f7;
+      --color-surface: #ffffff;
+      --color-info: #185fa5;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Source Sans 3', system-ui, sans-serif;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-text-primary: #eeede8;
+        --color-text-secondary: #a8a7a0;
+        --color-text-tertiary: #6a6a65;
+        --color-border-primary: #4a4a46;
+        --color-border-secondary: #3a3a36;
+        --color-border-tertiary: #2e2e2b;
+        --color-bg: #1c1c1a;
+        --color-surface: #242422;
+        --color-info: #85b7eb;
+      }
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #eef2f7;
-        }
+    body {
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      color: var(--color-text-primary);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .cv-wrap {
+      background: var(--color-surface);
+      max-width: 860px;
+      width: 100%;
+      padding: 3rem 3.5rem;
+      border: 0.5px solid var(--color-border-tertiary);
+      border-radius: 4px;
+    }
 
-        /* LADO ESQUERDO */
-        .sidebar {
-            background: #1e293b;
-            color: #fff;
-            padding: 30px 20px;
-        }
+    /* Header */
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1.5px solid var(--color-border-primary);
+      margin-bottom: 2rem;
+    }
 
-        .sidebar h1 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+    .cv-name {
+      font-family: var(--font-serif);
+      font-size: 32px;
+      font-weight: 400;
+      letter-spacing: -0.4px;
+      margin-bottom: 5px;
+      line-height: 1.1;
+    }
 
-        .sidebar p {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: #cbd5e1;
-        }
+    .cv-subtitle {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+    }
 
-        .section-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-            margin-top: 20px;
-            color: #94a3b8;
-        }
+    .cv-contact {
+      text-align: right;
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.9;
+    }
 
-        .skill {
-            background: #334155;
-            padding: 6px 10px;
-            border-radius: 5px;
-            margin: 5px 0;
-            font-size: 13px;
-        }
+    .cv-contact a {
+      color: var(--color-info);
+      text-decoration: none;
+    }
 
-        /* LADO DIREITO */
-        .content {
-            padding: 30px;
-        }
+    .cv-contact a:hover {
+      text-decoration: underline;
+    }
 
-        .content h2 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #1e293b;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 5px;
-        }
+    /* Body grid */
+    .cv-body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+    }
 
-        .content p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            color: #334155;
-        }
+    .cv-sidebar {
+      padding-right: 2.5rem;
+      border-right: 0.5px solid var(--color-border-tertiary);
+    }
 
-        .item {
-            margin-bottom: 15px;
-        }
+    .cv-main {
+      padding-left: 2.5rem;
+    }
 
-        .item strong {
-            display: block;
-            font-size: 14px;
-            color: #0f172a;
-        }
+    /* Sections */
+    .cv-section {
+      margin-bottom: 2rem;
+    }
 
-        .item span {
-            font-size: 13px;
-            color: #64748b;
-        }
+    .cv-section-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      margin-bottom: 0.85rem;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
+    /* Skills */
+    .cv-skill-block {
+      margin-bottom: 10px;
+    }
 
-    </style>
+    .cv-skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+    }
+
+    .cv-skill-name {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .cv-skill-bar {
+      display: flex;
+      gap: 3px;
+    }
+
+    .cv-skill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--color-border-secondary);
+    }
+
+    .cv-skill-dot.filled {
+      background: var(--color-text-secondary);
+    }
+
+    .cv-skill-desc {
+      font-size: 11px;
+      color: var(--color-text-tertiary);
+      line-height: 1.5;
+    }
+
+    /* Languages */
+    .cv-lang {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .cv-lang-level {
+      color: var(--color-text-tertiary);
+      font-size: 12px;
+    }
+
+    /* Education */
+    .cv-edu-entry {
+      margin-bottom: 12px;
+    }
+
+    .cv-edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .cv-edu-degree {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .cv-edu-year {
+      font-size: 11px;
+      color: var(--color-text-tertiary);
+      white-space: nowrap;
+    }
+
+    .cv-edu-org {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-top: 2px;
+    }
+
+    /* Main content */
+    .cv-obj {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .cv-entry {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+
+    .cv-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .cv-entry-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .cv-entry-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
+    .cv-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 6px;
+    }
+
+    .cv-tag {
+      font-size: 11px;
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      border: 0.5px solid var(--color-border-secondary);
+      border-radius: 3px;
+      padding: 2px 8px;
+    }
+
+    .cv-proj-link {
+      font-size: 12px;
+      color: var(--color-info);
+      text-decoration: none;
+    }
+
+    .cv-proj-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Print */
+    @media print {
+      body { padding: 0; background: white; }
+      .cv-wrap { border: none; padding: 2rem; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .cv-wrap { padding: 1.5rem; }
+      .cv-header { flex-direction: column; align-items: flex-start; }
+      .cv-contact { text-align: left; }
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-sidebar { padding-right: 0; border-right: none; border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+      .cv-main { padding-left: 0; }
+    }
+  </style>
 </head>
 <body>
+  <div class="cv-wrap">
 
-<div class="container">
+    <header class="cv-header">
+      <div>
+        <h1 class="cv-name">João Vitor Santos Goulart</h1>
+        <p class="cv-subtitle">Estudante de Sistemas de Informação</p>
+      </div>
+      <div class="cv-contact">
+        Uberaba – MG<br>
+        (34) 99883-8663<br>
+        joaovitor.santos.goulart@gmail.com<br>
+        <a href="#">LinkedIn</a>
+      </div>
+    </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h1>João Vitor Santos Goulart</h1>
-        <p>Estudante de TI</p>
+    <div class="cv-body">
 
-        <div class="section-title">Contato</div>
-        <p>
-            Uberaba - MG<br>
-            (34) 99883-8663<br>
-            joaovitor.santos.goulart@gmail.com<br>
-            <a href="#">LinkedIn</a>
-        </p>
+      <!-- Sidebar -->
+      <aside class="cv-sidebar">
 
-        <div class="section-title">Habilidades</div>
-        <div class="skill">C - Básico</div>
-        <div class="skill">Java - Básico</div>
-        <div class="skill">Python - Intermediário</div>
-        <div class="skill">SQL - Intermediário</div>
-        <div class="skill">Linux - Intermediário</div>
-        <div class="skill">Pacote Office</div>
+        <section class="cv-section">
+          <h2 class="cv-section-title">Habilidades</h2>
 
-        <div class="section-title">Idiomas</div>
-        <p>Português – Nativo</p>
-        <p>Inglês – Intermediário</p>
+          <div class="cv-skill-block">
+            <div class="cv-skill-row">
+              <span class="cv-skill-name">Python</span>
+              <div class="cv-skill-bar">
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+              </div>
+            </div>
+            <p class="cv-skill-desc">Projetos acadêmicos, scripts e lógica de programação</p>
+          </div>
+
+          <div class="cv-skill-block">
+            <div class="cv-skill-row">
+              <span class="cv-skill-name">SQL</span>
+              <div class="cv-skill-bar">
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+              </div>
+            </div>
+            <p class="cv-skill-desc">Consultas, joins e modelagem de banco de dados</p>
+          </div>
+
+          <div class="cv-skill-block">
+            <div class="cv-skill-row">
+              <span class="cv-skill-name">Linux</span>
+              <div class="cv-skill-bar">
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+              </div>
+            </div>
+            <p class="cv-skill-desc">Linha de comando, configuração e servidores</p>
+          </div>
+
+          <div class="cv-skill-block">
+            <div class="cv-skill-row">
+              <span class="cv-skill-name">Java</span>
+              <div class="cv-skill-bar">
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+              </div>
+            </div>
+            <p class="cv-skill-desc">Lógica orientada a objetos em ambiente acadêmico</p>
+          </div>
+
+          <div class="cv-skill-block">
+            <div class="cv-skill-row">
+              <span class="cv-skill-name">C</span>
+              <div class="cv-skill-bar">
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+              </div>
+            </div>
+            <p class="cv-skill-desc">Fundamentos de programação estruturada</p>
+          </div>
+
+          <div class="cv-skill-block">
+            <div class="cv-skill-row">
+              <span class="cv-skill-name">Pacote Office</span>
+              <div class="cv-skill-bar">
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot filled"></div>
+                <div class="cv-skill-dot"></div>
+                <div class="cv-skill-dot"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Idiomas</h2>
+          <div class="cv-lang"><span>Português</span><span class="cv-lang-level">Nativo</span></div>
+          <div class="cv-lang"><span>Inglês</span><span class="cv-lang-level">Intermediário</span></div>
+        </section>
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Formação</h2>
+          <div class="cv-edu-entry">
+            <div class="cv-edu-header">
+              <span class="cv-edu-degree">Sistemas de Informação</span>
+              <span class="cv-edu-year">até 2028</span>
+            </div>
+            <p class="cv-edu-org">UNIUBE</p>
+          </div>
+          <div class="cv-edu-entry">
+            <div class="cv-edu-header">
+              <span class="cv-edu-degree">Técnico em Informática</span>
+              <span class="cv-edu-year">até 2026</span>
+            </div>
+            <p class="cv-edu-org">UFTM</p>
+          </div>
+        </section>
+
+      </aside>
+
+      <!-- Main -->
+      <main class="cv-main">
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Objetivo</h2>
+          <p class="cv-obj">Estágio em desenvolvimento de software (frontend ou backend) ou TI, aplicando conhecimentos em redes, sistemas e banco de dados adquiridos na graduação e no curso técnico.</p>
+        </section>
+
+        <section class="cv-section">
+          <h2 class="cv-section-title">Projetos</h2>
+
+          <div class="cv-entry">
+            <p class="cv-entry-title">Website temático — Minecraft</p>
+            <p class="cv-entry-desc">Desenvolvimento de site com foco em estruturação de páginas, navegação entre seções e design responsivo com HTML e CSS.</p>
+            <div class="cv-tags">
+              <span class="cv-tag">HTML</span>
+              <span class="cv-tag">CSS</span>
+              <span class="cv-tag">Design responsivo</span>
+            </div>
+            <a class="cv-proj-link" href="https://dioni-447.github.io/Site/" target="_blank">Ver projeto →</a>
+          </div>
+
+          <div class="cv-entry">
+            <p class="cv-entry-title">Aplicação web — To-Do List</p>
+            <p class="cv-entry-desc">Sistema de gerenciamento de tarefas com manipulação dinâmica de elementos via JavaScript. Desenvolvido e operante em ambiente local.</p>
+            <div class="cv-tags">
+              <span class="cv-tag">JavaScript</span>
+              <span class="cv-tag">DOM</span>
+              <span class="cv-tag">HTML/CSS</span>
+            </div>
+            <a class="cv-proj-link" href="https://dioni-447.github.io/to-do-list/" target="_blank">Ver projeto →</a>
+          </div>
+
+          <div class="cv-entry">
+            <p class="cv-entry-title">Servidor de monitoramento — Zabbix</p>
+            <p class="cv-entry-desc">Instalação e configuração de servidor de monitoramento em ambiente acadêmico (UFTM), com coleta de métricas, parametrização de serviços e análise de desempenho de rede.</p>
+            <div class="cv-tags">
+              <span class="cv-tag">Linux</span>
+              <span class="cv-tag">Zabbix</span>
+              <span class="cv-tag">Redes</span>
+              <span class="cv-tag">Monitoramento</span>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
     </div>
-
-    <!-- Conteúdo principal -->
-    <div class="content">
-
-        <h2>Objetivo</h2>
-        <p>
-            Estágio na área de desenvolvimento de Software(Frontend ou Backend) ou Tecnologia da Informação,
-            aplicando conhecimentos acadêmicos e desenvolvendo habilidades práticas em redes,
-            sistemas e proteção de dados.
-        </p>
-
-        <h2>Resumo Profissional</h2>
-        <p>
-            Estudante de Sistemas de Informação e curso técnico em Informática, com foco em desenvolvimento de software.
-            Possui conhecimentos em C, Java e Python, SQL em nível intermediário e fundamentos de Linux.
-            Busca oportunidade para adquirir experiência prática e contribuir com soluções tecnológicas.
-        </p>
-
-        <h2>Formação</h2>
-
-        <div class="item">
-            <strong>Bacharelado em Sistemas de Informação</strong>
-            <span>UNIUBE | Atual – 2028</span>
-        </div>
-
-        <div class="item">
-            <strong>Técnico em Informática</strong>
-            <span>UFTM | Atual – 2026</span>
-        </div>
-
-        <h2>Projetos</h2>
-
-<div class="item">
-    <strong>Website Temático - Minecraft</strong>
-    <span>
-        Desenvolvimento de website com foco em estruturação de páginas, navegação e design responsivo.
-        <br>
-        <a href="https://dioni-447.github.io/Site/" target="_blank">Acessar projeto</a>
-    </span>
-</div>
-
-<div class="item">
-    <strong>Aplicação Web - To-Do List</strong>
-    <span>
-        Desenvolvimento de sistema de gerenciamento de tarefas com manipulação dinâmica de elementos.
-        <br>
-        <em>Observação: versão em nuvem não funcional, aplicação operante em ambiente local.</em>
-        <br>
-        <a href="https://dioni-447.github.io/to-do-list/" target="_blank">Acessar projeto</a>
-    </span>
-</div>
-
-<div class="item">
-    <strong>Servidor de Monitoramento com Zabbix</strong>
-    <span>
-        Instalação e configuração de servidor de monitoramento, incluindo coleta de métricas,
-        parametrização de serviços e análise de desempenho em ambiente acadêmico (UFTM).
-    </span>
-</div>
-
-
-    </div>
-
-</div>
-
+  </div>
 </body>
 </html>

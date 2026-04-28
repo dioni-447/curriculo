@@ -2,109 +2,204 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Currículo - João Vitor Santos Goulart</title>
+    <title>Currículo - João Vitor</title>
+
+    <!-- Fonte moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            background-color: #f4f4f4;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #eef2f7;
         }
 
         .container {
-            width: 800px;
-            margin: 30px auto;
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
             background: #fff;
-            padding: 25px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        h1 {
-            margin-bottom: 5px;
-            color: #333;
+        /* LADO ESQUERDO */
+        .sidebar {
+            background: #1e293b;
+            color: #fff;
+            padding: 30px 20px;
         }
 
-        .info {
+        .sidebar h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar p {
             font-size: 14px;
-            color: #555;
             margin-bottom: 20px;
+            color: #cbd5e1;
         }
 
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
+        .section-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
             margin-top: 20px;
-            color: #333;
+            color: #94a3b8;
         }
 
-        p {
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            padding: 5px 0;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #e3e3e3;
-            padding: 5px 10px;
-            margin: 3px;
+        .skill {
+            background: #334155;
+            padding: 6px 10px;
             border-radius: 5px;
-            font-size: 14px;
+            margin: 5px 0;
+            font-size: 13px;
         }
+
+        /* LADO DIREITO */
+        .content {
+            padding: 30px;
+        }
+
+        .content h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        .content p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #334155;
+        }
+
+        .item {
+            margin-bottom: 15px;
+        }
+
+        .item strong {
+            display: block;
+            font-size: 14px;
+            color: #0f172a;
+        }
+
+        .item span {
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>João Vitor Santos Goulart</h1>
-    <div class="info">
-        Rua Ana Modesto Ferreira, Uberaba – MG<br>
-        joaovitor.santos.goulart@gmail.com | (34) 99883-8663<br>
-        LinkedIn: linkedin.com/in/joão-vitor-santos-goulart
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>João Vitor Santos Goulart</h1>
+        <p>Estudante de TI</p>
+
+        <div class="section-title">Contato</div>
+        <p>
+            Uberaba - MG<br>
+            (34) 99883-8663<br>
+            joaovitor.santos.goulart@gmail.com<br>
+            <a href="#">LinkedIn</a>
+        </p>
+
+        <div class="section-title">Habilidades</div>
+        <div class="skill">C - Básico</div>
+        <div class="skill">Java - Básico</div>
+        <div class="skill">Python - Básico</div>
+        <div class="skill">SQL - Intermediário</div>
+        <div class="skill">Linux - Básico</div>
+        <div class="skill">Pacote Office</div>
+
+        <div class="section-title">Idiomas</div>
+        <p>Português – Nativo</p>
+        <p>Inglês – Intermediário</p>
     </div>
 
-    <h2>Objetivo</h2>
-    <p>
-        Estágio na área de Segurança Cibernética ou Tecnologia da Informação, buscando aplicar 
-        conhecimentos acadêmicos e técnicos e desenvolver habilidades práticas em redes, sistemas e proteção de dados.
-    </p>
+    <!-- Conteúdo principal -->
+    <div class="content">
 
-    <h2>Resumo</h2>
-    <p>
-        Estudante de Sistemas de Informação (3º semestre) e curso técnico em Informática, com interesse em 
-        desenvolvimento de software. Possui conhecimentos em C, Java e Python (básico), SQL (intermediário) 
-        e fundamentos de Linux. Busca oportunidade de estágio para adquirir experiência prática e contribuir com a equipe.
-    </p>
+        <h2>Objetivo</h2>
+        <p>
+            Estágio na área de Segurança Cibernética ou Tecnologia da Informação,
+            aplicando conhecimentos acadêmicos e desenvolvendo habilidades práticas em redes,
+            sistemas e proteção de dados.
+        </p>
 
-    <h2>Educação</h2>
-    <ul>
-        <li><strong>Bacharelado em Sistemas de Informação</strong> – UNIUBE (Atual/2028)</li>
-        <li><strong>Curso Técnico em Informática</strong> – UFTM (Atual/2026)</li>
-    </ul>
+        <h2>Resumo Profissional</h2>
+        <p>
+            Estudante de Sistemas de Informação e curso técnico em Informática, com foco em desenvolvimento de software.
+            Possui conhecimentos em C, Java e Python, SQL em nível intermediário e fundamentos de Linux.
+            Busca oportunidade para adquirir experiência prática e contribuir com soluções tecnológicas.
+        </p>
 
-    <h2>Informática</h2>
-    <div>
-        <span class="tag">C - Básico</span>
-        <span class="tag">Java - Básico</span>
-        <span class="tag">Python - Básico</span>
-        <span class="tag">SQL - Intermediário</span>
-        <span class="tag">Linux - Básico</span>
-        <span class="tag">Pacote Office - Intermediário</span>
+        <h2>Formação</h2>
+
+        <div class="item">
+            <strong>Bacharelado em Sistemas de Informação</strong>
+            <span>UNIUBE | Atual – 2028</span>
+        </div>
+
+        <div class="item">
+            <strong>Técnico em Informática</strong>
+            <span>UFTM | Atual – 2026</span>
+        </div>
+
+        <h2>Projetos</h2>
+
+<div class="item">
+    <strong>Website Temático - Minecraft</strong>
+    <span>
+        Desenvolvimento de website com foco em estruturação de páginas, navegação e design responsivo.
+        <br>
+        <a href="https://dioni-447.github.io/Site/" target="_blank">Acessar projeto</a>
+    </span>
+</div>
+
+<div class="item">
+    <strong>Aplicação Web - To-Do List</strong>
+    <span>
+        Desenvolvimento de sistema de gerenciamento de tarefas com manipulação dinâmica de elementos.
+        <br>
+        <em>Observação: versão em nuvem não funcional, aplicação operante em ambiente local.</em>
+        <br>
+        <a href="https://dioni-447.github.io/to-do-list/" target="_blank">Acessar projeto</a>
+    </span>
+</div>
+
+<div class="item">
+    <strong>Servidor de Monitoramento com Zabbix</strong>
+    <span>
+        Instalação e configuração de servidor de monitoramento, incluindo coleta de métricas,
+        parametrização de serviços e análise de desempenho em ambiente acadêmico (UFTM).
+    </span>
+</div>
+
+
     </div>
 
-    <h2>Idiomas</h2>
-    <ul>
-        <li>Português – Nativo</li>
-        <li>Inglês – Intermediário</li>
-    </ul>
 </div>
 
 </body>
 </html>
-

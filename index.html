@@ -1,480 +1,1071 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Currículo — João Vitor Santos Goulart</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>João Vitor Santos Goulart | Desenvolvedor de Software em formação</title>
+<meta name="description" content="Portfólio de João Vitor Santos Goulart, estudante de Sistemas de Informação com projetos em Java, Angular, AdonisJS, PostgreSQL, Linux e desenvolvimento full stack.">
 
-    :root {
-      --color-text-primary: #1a1a18;
-      --color-text-secondary: #5a5a56;
-      --color-text-tertiary: #8a8a85;
-      --color-border-primary: #b0afa8;
-      --color-border-secondary: #d0cfc8;
-      --color-border-tertiary: #e4e3dc;
-      --color-bg: #faf9f7;
-      --color-surface: #ffffff;
-      --color-info: #185fa5;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans: 'Source Sans 3', system-ui, sans-serif;
-    }
+<meta property="og:type" content="website">
+<meta property="og:title" content="João Vitor Santos Goulart | Desenvolvedor de Software em formação">
+<meta property="og:description" content="Portfólio de João Vitor Santos Goulart, estudante de Sistemas de Informação com projetos em Java, Angular, AdonisJS, PostgreSQL, Linux e desenvolvimento full stack.">
+<meta property="og:locale" content="pt_BR">
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --color-text-primary: #eeede8;
-        --color-text-secondary: #a8a7a0;
-        --color-text-tertiary: #6a6a65;
-        --color-border-primary: #4a4a46;
-        --color-border-secondary: #3a3a36;
-        --color-border-tertiary: #2e2e2b;
-        --color-bg: #1c1c1a;
-        --color-surface: #242422;
-        --color-info: #85b7eb;
-      }
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--color-bg);
-      color: var(--color-text-primary);
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-    }
+<style>
+  :root{
+    --bg: #FAF9F6;
+    --surface: #FFFFFF;
+    --surface-alt: #F1EEE7;
+    --ink: #191D22;
+    --ink-soft: #565F6B;
+    --ink-faint: #89919C;
+    --line: #E3E0D8;
+    --accent: #2C5D78;
+    --accent-dark: #1E4258;
+    --accent-tint: #DEEAF0;
+    --warm: #D98A3D;
+    --radius-s: 4px;
+    --radius-m: 10px;
+    --maxw: 1120px;
+  }
 
-    .cv-wrap {
-      background: var(--color-surface);
-      max-width: 860px;
-      width: 100%;
-      padding: 3rem 3.5rem;
-      border: 0.5px solid var(--color-border-tertiary);
-      border-radius: 4px;
-    }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
 
-    /* Header */
-    .cv-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1.5rem;
-      padding-bottom: 1.75rem;
-      border-bottom: 1.5px solid var(--color-border-primary);
-      margin-bottom: 2rem;
-    }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
 
-    .cv-name {
-      font-family: var(--font-serif);
-      font-size: 32px;
-      font-weight: 400;
-      letter-spacing: -0.4px;
-      margin-bottom: 5px;
-      line-height: 1.1;
-    }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
 
-    .cv-subtitle {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--color-text-tertiary);
-    }
+  h1,h2,h3{
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0;
+    color: var(--ink);
+  }
 
-    .cv-contact {
-      text-align: right;
-      font-size: 13px;
-      color: var(--color-text-secondary);
-      line-height: 1.9;
-    }
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width: 100%; display:block; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font-family: inherit; }
 
-    .cv-contact a {
-      color: var(--color-info);
-      text-decoration: none;
-    }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
 
-    .cv-contact a:hover {
-      text-decoration: underline;
-    }
+  .container{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
 
-    /* Body grid */
-    .cv-body {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 0;
-    }
+  section{ padding: 96px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type{ border-bottom: none; }
 
-    .cv-sidebar {
-      padding-right: 2.5rem;
-      border-right: 0.5px solid var(--color-border-tertiary);
-    }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display:block;
+  }
 
-    .cv-main {
-      padding-left: 2.5rem;
-    }
+  .section-head{
+    max-width: 620px;
+    margin-bottom: 48px;
+  }
+  .section-head h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); }
+  .section-head p{ color: var(--ink-soft); margin-top: 12px; max-width: 60ch; }
 
-    /* Sections */
-    .cv-section {
-      margin-bottom: 2rem;
-    }
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
 
-    .cv-section-title {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--color-text-tertiary);
-      margin-bottom: 0.85rem;
-      padding-bottom: 6px;
-      border-bottom: 0.5px solid var(--color-border-tertiary);
-    }
+  /* ---------- HEADER ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,249,246,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo{
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.01em;
+  }
+  .logo span{ color: var(--accent); }
 
-    /* Skills */
-    .cv-skill-block {
-      margin-bottom: 10px;
-    }
+  nav.primary-nav{ display: flex; align-items: center; gap: 32px; }
+  nav.primary-nav a{
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    position: relative;
+    padding: 4px 0;
+  }
+  nav.primary-nav a:hover{ color: var(--ink); }
+  nav.primary-nav a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-2px;
+    height:2px; width:0;
+    background: var(--accent);
+    transition: width 0.2s ease;
+  }
+  nav.primary-nav a:hover::after{ width: 100%; }
 
-    .cv-skill-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3px;
-    }
+  .header-actions{ display:flex; align-items:center; gap: 18px; }
 
-    .cv-skill-name {
-      font-size: 13px;
-      font-weight: 500;
-    }
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border-radius: var(--radius-s);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn:hover{ transform: translateY(-1px); }
+  .btn-primary{ background: var(--accent); color: #fff; }
+  .btn-primary:hover{ background: var(--accent-dark); }
+  .btn-outline{ background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-outline:hover{ border-color: var(--accent); color: var(--accent); }
+  .btn-sm{ padding: 8px 14px; font-size: 0.85rem; }
 
-    .cv-skill-bar {
-      display: flex;
-      gap: 3px;
-    }
+  .hamburger{
+    display:none;
+    background:none;
+    border:none;
+    width: 32px; height: 32px;
+    position: relative;
+    cursor: pointer;
+  }
+  .hamburger span{
+    position:absolute; left:4px; right:4px; height:2px; background: var(--ink);
+    transition: all 0.25s ease;
+  }
+  .hamburger span:nth-child(1){ top:10px; }
+  .hamburger span:nth-child(2){ top:16px; }
+  .hamburger span:nth-child(3){ top:22px; }
+  .hamburger.open span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2){ opacity:0; }
+  .hamburger.open span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
-    .cv-skill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--color-border-secondary);
-    }
+  .mobile-panel{
+    display:none;
+    position: fixed;
+    inset: 72px 0 0 0;
+    background: var(--bg);
+    z-index: 99;
+    padding: 24px 28px;
+    overflow-y: auto;
+  }
+  .mobile-panel.open{ display:block; }
+  .mobile-panel a{
+    display:block;
+    padding: 16px 0;
+    font-size: 1.15rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile-panel .btn{ margin-top: 24px; width:100%; justify-content:center; }
 
-    .cv-skill-dot.filled {
-      background: var(--color-text-secondary);
-    }
+  @media (max-width: 860px){
+    nav.primary-nav{ display:none; }
+    .header-actions .btn-primary.desktop-only{ display:none; }
+    .hamburger{ display:block; }
+  }
 
-    .cv-skill-desc {
-      font-size: 11px;
-      color: var(--color-text-tertiary);
-      line-height: 1.5;
-    }
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 100px 0 90px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .container{
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-kicker{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .hero h1{
+    font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+    letter-spacing: -0.015em;
+  }
+  .hero .role{
+    margin-top: 14px;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .hero p.desc{
+    margin-top: 22px;
+    max-width: 56ch;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+  .hero-ctas{ margin-top: 34px; display:flex; gap: 14px; flex-wrap: wrap; }
 
-    /* Languages */
-    .cv-lang {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      margin-bottom: 5px;
-    }
+  .hero-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    padding: 26px;
+  }
+  .hero-card-row{
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+  }
+  .hero-card-row:last-child{ border-bottom: none; }
+  .hero-card-row .k{ color: var(--ink-faint); }
+  .hero-card-row .v{ font-weight: 600; text-align: right; }
+  .hero-card-head{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--line);
+  }
 
-    .cv-lang-level {
-      color: var(--color-text-tertiary);
-      font-size: 12px;
-    }
+  @media (max-width: 860px){
+    .hero .container{ grid-template-columns: 1fr; }
+    .hero-card{ order: -1; }
+  }
 
-    /* Education */
-    .cv-edu-entry {
-      margin-bottom: 12px;
-    }
+  /* ---------- SOBRE ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .about-grid p{ color: var(--ink-soft); margin: 0 0 16px; max-width: 62ch; }
+  .about-grid p:last-child{ margin-bottom:0; }
 
-    .cv-edu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
-    }
+  .edu-list{ display:flex; flex-direction: column; gap: 20px; }
+  .edu-item{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-s);
+    padding: 18px 20px;
+  }
+  .edu-item h3{ font-size: 1rem; }
+  .edu-item .org{ color: var(--ink-soft); font-size: 0.9rem; margin-top: 4px; }
+  .edu-item .when{ color: var(--ink-faint); font-size: 0.82rem; margin-top: 8px; font-family:'IBM Plex Mono', monospace; }
 
-    .cv-edu-degree {
-      font-size: 13px;
-      font-weight: 500;
-    }
+  @media (max-width: 860px){
+    .about-grid{ grid-template-columns: 1fr; gap: 40px; }
+  }
 
-    .cv-edu-year {
-      font-size: 11px;
-      color: var(--color-text-tertiary);
-      white-space: nowrap;
-    }
+  /* ---------- ESTUDOS ---------- */
+  .study-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+  }
+  .study-item{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    padding: 18px 18px;
+    display:flex;
+    align-items:flex-start;
+    gap: 12px;
+  }
+  .study-item .dot{
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--warm);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .study-item span.label{ font-size: 0.96rem; font-weight: 500; }
 
-    .cv-edu-org {
-      font-size: 12px;
-      color: var(--color-text-secondary);
-      margin-top: 2px;
-    }
+  /* ---------- TECNOLOGIAS ---------- */
+  .tech-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+  }
+  .tech-cat h3{
+    font-size: 0.78rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin-bottom: 14px;
+    text-transform: lowercase;
+  }
+  .tech-chips{ display:flex; flex-wrap:wrap; gap: 8px; }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding: 7px 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    font-size: 0.87rem;
+  }
+  .chip .bracket{ color: var(--accent); font-family:'IBM Plex Mono', monospace; }
 
-    /* Main content */
-    .cv-obj {
-      font-size: 14px;
-      color: var(--color-text-secondary);
-      line-height: 1.7;
-    }
+  /* ---------- PROJETOS ---------- */
+  .featured-project{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+  }
+  .fp-visual{
+    background: var(--accent-dark);
+    display:flex; align-items:center; justify-content:center;
+    padding: 40px;
+    min-height: 280px;
+  }
+  .fp-body{ padding: 40px; display:flex; flex-direction:column; }
+  .fp-tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .fp-body h3{ font-size: 1.5rem; margin-bottom: 10px; }
+  .fp-body .desc{ color: var(--ink-soft); margin-bottom: 18px; }
+  .stack-line{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.83rem;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .fp-body ul.features{ margin-bottom: 22px; }
+  .fp-body ul.features li{
+    position:relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+    color: var(--ink);
+  }
+  .fp-body ul.features li::before{
+    content:"—";
+    position:absolute; left:0; color: var(--accent);
+  }
+  .learned-box{
+    background: var(--surface-alt);
+    border-radius: var(--radius-s);
+    padding: 16px 18px;
+    margin-bottom: 22px;
+    font-size: 0.9rem;
+  }
+  .learned-box strong{ display:block; margin-bottom: 8px; font-family:'Sora',sans-serif; font-size: 0.92rem;}
+  .learned-box ul{ display:flex; flex-wrap:wrap; gap: 6px 14px; }
+  .learned-box li{ font-size: 0.85rem; color: var(--ink-soft); }
+  .learned-box li::before{ content:"·"; margin-right:6px; color: var(--accent); }
 
-    .cv-entry {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 0.5px solid var(--color-border-tertiary);
-    }
+  @media (max-width: 860px){
+    .featured-project{ grid-template-columns: 1fr; }
+    .fp-visual{ min-height: 200px; }
+  }
 
-    .cv-entry:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+  .project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .project-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    padding: 26px;
+    display:flex;
+    flex-direction: column;
+  }
+  .project-card .icon-row{
+    width: 44px; height: 44px;
+    border-radius: var(--radius-s);
+    background: var(--accent-tint);
+    color: var(--accent-dark);
+    display:flex; align-items:center; justify-content:center;
+    margin-bottom: 18px;
+  }
+  .project-card h3{ font-size: 1.08rem; margin-bottom: 8px; }
+  .project-card .desc{ color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 14px; }
+  .project-card .stack-line{ margin-bottom: 14px; font-size: 0.78rem; }
+  .project-card ul.features{ margin-bottom: 16px; flex-grow: 1; }
+  .project-card ul.features li{
+    font-size: 0.86rem;
+    color: var(--ink);
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+  }
+  .project-card ul.features li::before{
+    content:"—"; position:absolute; left:0; color: var(--accent);
+  }
+  .repo-pending{
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    font-family: 'IBM Plex Mono', monospace;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius-s);
+    padding: 8px 12px;
+    display:inline-block;
+    width: fit-content;
+  }
 
-    .cv-entry-title {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
+  /* ---------- CERTIFICAÇÕES ---------- */
+  .cert-highlight-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .cert-card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    padding: 20px;
+  }
+  .cert-card h3{ font-size: 0.98rem; margin-bottom: 6px; }
+  .cert-card .org{ color: var(--ink-soft); font-size: 0.86rem; }
+  .cert-card .meta{ margin-top: 10px; font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; color: var(--accent); }
 
-    .cv-entry-desc {
-      font-size: 13px;
-      color: var(--color-text-secondary);
-      line-height: 1.65;
-      margin-bottom: 8px;
-    }
+  .cert-lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .cert-lists h3{
+    font-size: 0.78rem;
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .cert-lists li{
+    display:flex; justify-content: space-between; gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.89rem;
+  }
+  .cert-lists li span.hrs{ color: var(--ink-faint); font-family:'IBM Plex Mono', monospace; font-size: 0.78rem; white-space:nowrap; }
 
-    .cv-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 6px;
-    }
+  @media (max-width: 700px){
+    .cert-lists{ grid-template-columns: 1fr; gap: 28px; }
+  }
 
-    .cv-tag {
-      font-size: 11px;
-      background: var(--color-bg);
-      color: var(--color-text-secondary);
-      border: 0.5px solid var(--color-border-secondary);
-      border-radius: 3px;
-      padding: 2px 8px;
-    }
+  /* ---------- CURRICULO ---------- */
+  .resume-box{
+    background: var(--accent-dark);
+    color: #fff;
+    border-radius: var(--radius-m);
+    padding: 48px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .resume-box h2{ color:#fff; font-size: 1.5rem; }
+  .resume-box p{ color: #C9D8E1; margin-top: 8px; max-width: 44ch; }
+  .resume-box .btn-primary{ background:#fff; color: var(--accent-dark); }
+  .resume-box .btn-primary:hover{ background: var(--accent-tint); }
 
-    .cv-proj-link {
-      font-size: 12px;
-      color: var(--color-info);
-      text-decoration: none;
-    }
+  /* ---------- CONTATO ---------- */
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+  }
+  .contact-info p.lead{ color: var(--ink-soft); max-width: 46ch; margin-bottom: 30px; }
+  .contact-list{ display:flex; flex-direction:column; gap: 18px; }
+  .contact-list a, .contact-list .row{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    font-size: 0.98rem;
+    padding: 4px 0;
+  }
+  .contact-list .icon-box{
+    width: 38px; height: 38px;
+    border-radius: var(--radius-s);
+    background: var(--accent-tint);
+    color: var(--accent-dark);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .contact-list a:hover{ color: var(--accent); }
 
-    .cv-proj-link:hover {
-      text-decoration: underline;
-    }
+  form.contact-form{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-m);
+    padding: 32px;
+  }
+  .field{ margin-bottom: 18px; }
+  .field label{ display:block; font-size: 0.86rem; margin-bottom: 6px; color: var(--ink-soft); }
+  .field input, .field textarea{
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-s);
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: var(--bg);
+    color: var(--ink);
+  }
+  .field textarea{ min-height: 120px; resize: vertical; }
+  .form-note{ font-size: 0.8rem; color: var(--ink-faint); margin-top: 12px; }
 
-    /* Print */
-    @media print {
-      body { padding: 0; background: white; }
-      .cv-wrap { border: none; padding: 2rem; }
-    }
+  @media (max-width: 860px){
+    .contact-grid{ grid-template-columns: 1fr; gap: 36px; }
+  }
 
-    /* Mobile */
-    @media (max-width: 600px) {
-      body { padding: 1rem; }
-      .cv-wrap { padding: 1.5rem; }
-      .cv-header { flex-direction: column; align-items: flex-start; }
-      .cv-contact { text-align: left; }
-      .cv-body { grid-template-columns: 1fr; }
-      .cv-sidebar { padding-right: 0; border-right: none; border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
-      .cv-main { padding-left: 0; }
-    }
-  </style>
+  /* ---------- FOOTER ---------- */
+  footer{ padding: 44px 0; }
+  .footer-wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .footer-brand strong{ font-family:'Sora',sans-serif; display:block; }
+  .footer-brand span{ color: var(--ink-soft); font-size: 0.88rem; }
+  .footer-links{ display:flex; gap: 22px; }
+  .footer-links a{ color: var(--ink-soft); font-size: 0.9rem; }
+  .footer-links a:hover{ color: var(--accent); }
+  .footer-bottom{
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  /* reveal animation - single subtle pass */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background: var(--accent); color:#fff; padding: 10px 16px; z-index: 200;
+  }
+  .skip-link:focus{ left: 12px; top: 12px; }
+</style>
 </head>
 <body>
-  <div class="cv-wrap">
 
-    <header class="cv-header">
-      <div>
-        <h1 class="cv-name">João Vitor Santos Goulart</h1>
-        <p class="cv-subtitle">Estudante de Sistemas de Informação</p>
-      </div>
-      <div class="cv-contact">
-        Uberaba – MG<br>
-        (34) 99883-8663<br>
-        joaovitor.santos.goulart@gmail.com<br>
-        <a href="https://www.linkedin.com/in/joaovitorsgoulart/" target="_blank">LinkedIn</a>
-      </div>
-    </header>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
-    <div class="cv-body">
-
-      <!-- Sidebar -->
-      <aside class="cv-sidebar">
-
-        <section class="cv-section">
-          <h2 class="cv-section-title">Habilidades</h2>
-
-          <div class="cv-skill-block">
-            <div class="cv-skill-row">
-              <span class="cv-skill-name">Python</span>
-              <div class="cv-skill-bar">
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-              </div>
-            </div>
-            <p class="cv-skill-desc">Projetos acadêmicos, scripts e lógica de programação</p>
-          </div>
-
-          <div class="cv-skill-block">
-            <div class="cv-skill-row">
-              <span class="cv-skill-name">SQL</span>
-              <div class="cv-skill-bar">
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-              </div>
-            </div>
-            <p class="cv-skill-desc">Consultas, joins e modelagem de banco de dados</p>
-          </div>
-
-          <div class="cv-skill-block">
-            <div class="cv-skill-row">
-              <span class="cv-skill-name">Linux</span>
-              <div class="cv-skill-bar">
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-              </div>
-            </div>
-            <p class="cv-skill-desc">Linha de comando, configuração e servidores</p>
-          </div>
-
-          <div class="cv-skill-block">
-            <div class="cv-skill-row">
-              <span class="cv-skill-name">Java</span>
-              <div class="cv-skill-bar">
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-              </div>
-            </div>
-            <p class="cv-skill-desc">Lógica orientada a objetos em ambiente acadêmico</p>
-          </div>
-
-          <div class="cv-skill-block">
-            <div class="cv-skill-row">
-              <span class="cv-skill-name">C</span>
-              <div class="cv-skill-bar">
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-              </div>
-            </div>
-            <p class="cv-skill-desc">Fundamentos de programação estruturada</p>
-          </div>
-
-          <div class="cv-skill-block">
-            <div class="cv-skill-row">
-              <span class="cv-skill-name">Pacote Office</span>
-              <div class="cv-skill-bar">
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot filled"></div>
-                <div class="cv-skill-dot"></div>
-                <div class="cv-skill-dot"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="cv-section">
-          <h2 class="cv-section-title">Idiomas</h2>
-          <div class="cv-lang"><span>Português</span><span class="cv-lang-level">Nativo</span></div>
-          <div class="cv-lang"><span>Inglês</span><span class="cv-lang-level">Intermediário</span></div>
-        </section>
-
-        <section class="cv-section">
-          <h2 class="cv-section-title">Formação</h2>
-          <div class="cv-edu-entry">
-            <div class="cv-edu-header">
-              <span class="cv-edu-degree">Sistemas de Informação</span>
-              <span class="cv-edu-year">até 2028</span>
-            </div>
-            <p class="cv-edu-org">UNIUBE</p>
-          </div>
-          <div class="cv-edu-entry">
-            <div class="cv-edu-header">
-              <span class="cv-edu-degree">Técnico em Informática</span>
-              <span class="cv-edu-year">até 2026</span>
-            </div>
-            <p class="cv-edu-org">UFTM</p>
-          </div>
-        </section>
-
-      </aside>
-
-      <!-- Main -->
-      <main class="cv-main">
-
-        <section class="cv-section">
-          <h2 class="cv-section-title">Objetivo</h2>
-          <p class="cv-obj">Estágio em desenvolvimento de software (frontend ou backend) ou TI, aplicando conhecimentos em redes, sistemas e banco de dados adquiridos na graduação e no curso técnico.</p>
-        </section>
-
-        <section class="cv-section">
-          <h2 class="cv-section-title">Projetos</h2>
-
-          <div class="cv-entry">
-            <p class="cv-entry-title">Website temático — Minecraft</p>
-            <p class="cv-entry-desc">Desenvolvimento de site com foco em estruturação de páginas, navegação entre seções e design responsivo com HTML e CSS.</p>
-            <div class="cv-tags">
-              <span class="cv-tag">HTML</span>
-              <span class="cv-tag">CSS</span>
-              <span class="cv-tag">Design responsivo</span>
-            </div>
-            <a class="cv-proj-link" href="https://dioni-447.github.io/Site/" target="_blank">Ver projeto →</a><br>
-            <a class="cv-proj-link" href="https://github.com/dioni-447/site" target="_blank">Ver repositório →</a>
-          </div>
-
-          <div class="cv-entry">
-            <p class="cv-entry-title">Aplicação web — To-Do List</p>
-            <p class="cv-entry-desc">Sistema de gerenciamento de tarefas com manipulação dinâmica de elementos via JavaScript. Desenvolvido e operante em ambiente local.</p>
-            <div class="cv-tags">
-              <span class="cv-tag">JavaScript</span>
-              <span class="cv-tag">DOM</span>
-              <span class="cv-tag">HTML/CSS</span>
-            </div>
-            <a class="cv-proj-link" href="https://dioni-447.github.io/to-do-list/" target="_blank">Ver projeto →</a><br>
-            <a class="cv-proj-link" href="https://github.com/dioni-447/to-do-list" target="_blank">Ver repositório →</a>
-          </div>
-
-          <div class="cv-entry">
-            <p class="cv-entry-title">Servidor de monitoramento — Zabbix</p>
-            <p class="cv-entry-desc">Instalação e configuração de servidor de monitoramento em ambiente acadêmico (UFTM), com coleta de métricas, parametrização de serviços e análise de desempenho de rede.</p>
-            <div class="cv-tags">
-              <span class="cv-tag">Linux</span>
-              <span class="cv-tag">Zabbix</span>
-              <span class="cv-tag">Redes</span>
-              <span class="cv-tag">Monitoramento</span>
-            </div>
-          </div>
-
-        </section>
-
-      </main>
+<header>
+  <div class="nav-wrap">
+    <a href="#topo" class="logo">João<span>Vitor</span></a>
+    <nav class="primary-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#estudos">Estudos</a>
+      <a href="#tecnologias">Tecnologias</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#certificacoes">Certificações</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/curriculo.pdf" class="btn btn-primary desktop-only" download>Baixar currículo</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobilePanel">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="#sobre">Sobre</a>
+    <a href="#estudos">Estudos</a>
+    <a href="#tecnologias">Tecnologias</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#certificacoes">Certificações</a>
+    <a href="#contato">Contato</a>
+    <a href="Currículo.pdf" class="btn btn-primary" download>Baixar currículo</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="container">
+      <div>
+        <span class="hero-kicker">Uberaba – MG, Brasil</span>
+        <h1>João Vitor Santos Goulart</h1>
+        <p class="role">Estudante de Sistemas de Informação | Desenvolvedor de Software em formação</p>
+        <p class="desc">Estudante de Sistemas de Informação com experiência acadêmica e prática em desenvolvimento web, backend, bancos de dados e Linux. Busco uma oportunidade de estágio para aplicar meus conhecimentos, contribuir com projetos reais e continuar evoluindo na área de tecnologia.</p>
+        <div class="hero-ctas">
+          <a href="#projetos" class="btn btn-primary">Ver meus projetos</a>
+          <a href="https://github.com/dioni-447" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-head">status --candidato</div>
+        <div class="hero-card-row"><span class="k">Foco</span><span class="v">Estágio em Dev / TI</span></div>
+        <div class="hero-card-row"><span class="k">Interesse</span><span class="v">Frontend, Backend, Full Stack</span></div>
+        <div class="hero-card-row"><span class="k">Formação</span><span class="v">Sistemas de Informação</span></div>
+        <div class="hero-card-row"><span class="k">Previsão</span><span class="v">Conclusão em 2028</span></div>
+        <div class="hero-card-row"><span class="k">Localização</span><span class="v">Uberaba – MG</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">01 — sobre</span>
+        <h2>Quem eu sou</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>Sou estudante de Bacharelado em Sistemas de Informação e Técnico em Informática, com interesse em desenvolvimento de software. Tenho estudado e desenvolvido projetos utilizando Java, Spring Boot, Angular, TypeScript, AdonisJS, PostgreSQL e Linux.</p>
+          <p>Meu objetivo é ingressar na área de tecnologia por meio de uma oportunidade de estágio, contribuindo com a equipe enquanto continuo desenvolvendo minhas habilidades.</p>
+        </div>
+        <div class="edu-list reveal">
+          <div class="edu-item">
+            <h3>Bacharelado em Sistemas de Informação</h3>
+            <div class="org">UNIUBE — Universidade de Uberaba</div>
+            <div class="when">Previsão de conclusão: 2028</div>
+          </div>
+          <div class="edu-item">
+            <h3>Curso Técnico em Informática</h3>
+            <div class="org">UFTM — Universidade Federal do Triângulo Mineiro</div>
+            <div class="when">Conclusão: 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTUDOS -->
+  <section id="estudos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">02 — em evolução</span>
+        <h2>Atualmente estudando</h2>
+        <p>Aprendizado contínuo faz parte da rotina — estas são as frentes em que venho me aprofundando agora.</p>
+      </div>
+      <div class="study-grid reveal">
+        <div class="study-item"><span class="dot"></span><span class="label">Java e Programação Orientada a Objetos</span></div>
+        <div class="study-item"><span class="dot"></span><span class="label">Angular e TypeScript</span></div>
+        <div class="study-item"><span class="dot"></span><span class="label">Desenvolvimento de APIs e Backend</span></div>
+        <div class="study-item"><span class="dot"></span><span class="label">PostgreSQL e SQL</span></div>
+        <div class="study-item"><span class="dot"></span><span class="label">Git e GitHub</span></div>
+        <div class="study-item"><span class="dot"></span><span class="label">Linux</span></div>
+        <div class="study-item"><span class="dot"></span><span class="label">Desenvolvimento Full Stack</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS -->
+  <section id="tecnologias">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">03 — stack</span>
+        <h2>Tecnologias</h2>
+        <p>Ferramentas e linguagens com as quais já pratiquei em projetos acadêmicos e pessoais.</p>
+      </div>
+      <div class="tech-grid reveal">
+        <div class="tech-cat">
+          <h3>frontend</h3>
+          <div class="tech-chips">
+            <span class="chip"><span class="bracket">&lt;/&gt;</span>HTML</span>
+            <span class="chip"><span class="bracket">&lt;/&gt;</span>CSS</span>
+            <span class="chip"><span class="bracket">&lt;/&gt;</span>JavaScript</span>
+            <span class="chip"><span class="bracket">&lt;/&gt;</span>TypeScript</span>
+            <span class="chip"><span class="bracket">&lt;/&gt;</span>Angular</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <h3>backend</h3>
+          <div class="tech-chips">
+            <span class="chip"><span class="bracket">&gt;_</span>Java</span>
+            <span class="chip"><span class="bracket">&gt;_</span>Spring Boot</span>
+            <span class="chip"><span class="bracket">&gt;_</span>AdonisJS</span>
+            <span class="chip"><span class="bracket">&gt;_</span>Python</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <h3>banco de dados</h3>
+          <div class="tech-chips">
+            <span class="chip"><span class="bracket">db</span>PostgreSQL</span>
+            <span class="chip"><span class="bracket">db</span>SQL</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <h3>ferramentas &amp; infraestrutura</h3>
+          <div class="tech-chips">
+            <span class="chip"><span class="bracket">$</span>Git</span>
+            <span class="chip"><span class="bracket">$</span>GitHub</span>
+            <span class="chip"><span class="bracket">$</span>Linux</span>
+            <span class="chip"><span class="bracket">$</span>Nginx</span>
+            <span class="chip"><span class="bracket">$</span>Zabbix</span>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <h3>outros</h3>
+          <div class="tech-chips">
+            <span class="chip"><span class="bracket">·</span>C</span>
+            <span class="chip"><span class="bracket">·</span>Pacote Office</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">04 — na prática</span>
+        <h2>Projetos</h2>
+        <p>Aplicações construídas para praticar e aprofundar conceitos de frontend, backend, banco de dados e infraestrutura.</p>
+      </div>
+
+      <!-- Featured project -->
+      <div class="featured-project reveal">
+        <div class="fp-visual" aria-hidden="true">
+          <svg width="220" height="180" viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="200" height="140" rx="6" stroke="#7FA8C1" stroke-width="2"/>
+            <rect x="10" y="10" width="200" height="24" rx="6" fill="#7FA8C1" fill-opacity="0.25"/>
+            <circle cx="24" cy="22" r="3" fill="#DEEAF0"/>
+            <circle cx="34" cy="22" r="3" fill="#DEEAF0"/>
+            <circle cx="44" cy="22" r="3" fill="#DEEAF0"/>
+            <rect x="24" y="48" width="70" height="8" rx="2" fill="#DEEAF0"/>
+            <rect x="24" y="64" width="150" height="8" rx="2" fill="#4C7C99"/>
+            <rect x="24" y="80" width="120" height="8" rx="2" fill="#4C7C99"/>
+            <rect x="24" y="104" width="60" height="26" rx="4" fill="#D98A3D" fill-opacity="0.85"/>
+            <rect x="96" y="104" width="60" height="26" rx="4" stroke="#DEEAF0" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="fp-body">
+          <span class="fp-tag">projeto principal</span>
+          <h3>Sistema Web Full Stack</h3>
+          <p class="desc">Aplicação web full stack para gerenciamento de contatos e mensagens.</p>
+          <div class="stack-line">Angular · AdonisJS · PostgreSQL · Linux · Nginx</div>
+          <ul class="features">
+            <li>Frontend desenvolvido em Angular</li>
+            <li>Backend desenvolvido em AdonisJS</li>
+            <li>Formulários e autenticação de usuários</li>
+            <li>Área administrativa</li>
+            <li>Integração com PostgreSQL e API própria</li>
+            <li>Publicação em servidor Linux com Nginx</li>
+          </ul>
+          <div class="learned-box">
+            <strong>O que aprendi neste projeto</strong>
+            <ul>
+              <li>Integração frontend/backend</li>
+              <li>Construção de APIs</li>
+              <li>Modelagem de banco de dados</li>
+              <li>Autenticação</li>
+              <li>Deploy em Linux</li>
+              <li>Organização de uma aplicação full stack</li>
+            </ul>
+          </div>
+          <a href="https://github.com/dioni-447/estagio" target="_blank" rel="noopener" class="btn btn-primary" style="width:fit-content;">Ver código no GitHub</a>
+        </div>
+      </div>
+
+      <!-- Other projects -->
+      <div class="project-grid reveal">
+
+        <div class="project-card">
+          <div class="icon-row" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3 3-3M12 4v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>To-Do List</h3>
+          <p class="desc">Aplicação para gerenciamento de tarefas.</p>
+          <div class="stack-line mono">Java · Spring Boot · PostgreSQL</div>
+          <ul class="features">
+            <li>Criação, consulta, atualização e exclusão de tarefas</li>
+            <li>Integração com PostgreSQL</li>
+            <li>Aplicação de conceitos de orientação a objetos</li>
+            <li>Organização em camadas da aplicação</li>
+          </ul>
+          <span class="repo-pending">repositório em breve</span>
+        </div>
+
+        <div class="project-card">
+          <div class="icon-row" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 012-2h5v16H6a2 2 0 01-2-2V6z" stroke="currentColor" stroke-width="1.8"/><path d="M13 4h5a2 2 0 012 2v3a2 2 0 01-2 2h-5V4z" stroke="currentColor" stroke-width="1.8"/><path d="M13 13h5a2 2 0 012 2v3a2 2 0 01-2 2h-5v-7z" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <h3>Base de Conhecimento</h3>
+          <p class="desc">Aplicação para organização de conteúdos em estrutura hierárquica.</p>
+          <div class="stack-line mono">Angular · TypeScript · Backend · Banco de Dados</div>
+          <ul class="features">
+            <li>Organização hierárquica de conteúdos e categorias</li>
+            <li>Criação, edição e exclusão de itens</li>
+            <li>Integração entre frontend e backend</li>
+            <li>Componentes reutilizáveis e organização modular</li>
+          </ul>
+          <span class="repo-pending">repositório em breve</span>
+        </div>
+
+        <div class="project-card">
+          <div class="icon-row" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 20h8M12 16v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="7.5" cy="8.5" r="0.9" fill="currentColor"/><circle cx="10.5" cy="8.5" r="0.9" fill="currentColor"/></svg>
+          </div>
+          <h3>Servidor de Monitoramento</h3>
+          <p class="desc">Projeto acadêmico envolvendo instalação e configuração de servidor de monitoramento.</p>
+          <div class="stack-line mono">Linux · Zabbix · Redes</div>
+          <ul class="features">
+            <li>Instalação e configuração do servidor</li>
+            <li>Coleta e acompanhamento de métricas</li>
+            <li>Monitoramento de serviços e desempenho de rede</li>
+            <li>Administração básica de Linux</li>
+          </ul>
+          <span class="repo-pending">repositório em breve</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICAÇÕES -->
+  <section id="certificacoes">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">05 — certificações</span>
+        <h2>Certificações</h2>
+      </div>
+
+      <div class="cert-highlight-grid reveal">
+        <div class="cert-card">
+          <h3>Python Fundamental 1</h3>
+          <div class="org">Instituto Federal de Santa Catarina — IFSC</div>
+          <div class="meta">20h · aproveitamento 93,33%</div>
+        </div>
+        <div class="cert-card">
+          <h3>HTML Essentials</h3>
+          <div class="org">Cisco Networking Academy / Uniube</div>
+        </div>
+        <div class="cert-card">
+          <h3>JavaScript Essentials 1</h3>
+          <div class="org">Cisco Networking Academy / Uniube</div>
+        </div>
+        <div class="cert-card">
+          <h3>JavaScript Essentials 2</h3>
+          <div class="org">Cisco Networking Academy / Uniube</div>
+        </div>
+      </div>
+
+      <div class="cert-lists reveal">
+        <div>
+          <h3>outros certificados</h3>
+          <ul>
+            <li><span>Administrando Banco de Dados — Escola Virtual</span><span class="hrs">15h</span></li>
+            <li><span>Segurança em Tecnologia da Informação — Escola Virtual</span><span class="hrs">12h</span></li>
+            <li><span>Inteligência Artificial e o Novo Contexto da Cultura Digital</span><span class="hrs">20h</span></li>
+            <li><span>Fluência em Inteligência Artificial</span><span class="hrs">4h</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>formação complementar</h3>
+          <ul>
+            <li><span>Introdução à Gestão de Projetos</span><span class="hrs">10h</span></li>
+            <li><span>Comunicação Empresarial</span><span class="hrs">12h</span></li>
+            <li><span>Desenvolvimento Profissional</span><span class="hrs">8h</span></li>
+            <li><span>Educação Financeira</span><span class="hrs">4h</span></li>
+            <li><span>Profissional 5.0 — AC International Group / Uniube</span><span class="hrs">4h</span></li>
+          </ul>
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULO -->
+  <section id="curriculo">
+    <div class="container">
+      <div class="resume-box reveal">
+        <div>
+          <h2>Quer conhecer minha formação e experiências de forma mais completa?</h2>
+          <p>O currículo completo reúne formação, certificações e projetos em um único documento.</p>
+        </div>
+        <a href="Currículo.pdf" download class="btn btn-primary">Baixar currículo em PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">06 — contato</span>
+        <h2>Vamos conversar?</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="lead">Estou em busca de uma oportunidade de estágio em Desenvolvimento de Software ou Tecnologia da Informação.</p>
+          <div class="contact-list">
+            <a href="mailto:joaovitor.santos.goulart@gmail.com">
+              <span class="icon-box" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8"/></svg>
+              </span>
+              joaovitor.santos.goulart@gmail.com
+            </a>
+            <a href="tel:+5534998838663">
+              <span class="icon-box" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2C9.6 21 3 14.4 3 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+              </span>
+              (34) 99883-8663
+            </a>
+            <a href="https://www.linkedin.com/in/joaovitorsgoulart/" target="_blank" rel="noopener">
+              <span class="icon-box" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 10v7M7 7v.01M11 17v-4.5a2 2 0 014 0V17M11 17v-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              </span>
+              linkedin.com/in/joaovitorsgoulart
+            </a>
+            <a href="https://github.com/dioni-447" target="_blank" rel="noopener">
+              <span class="icon-box" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 00-3.16 19.5c.5.1.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.9-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.92.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z" fill="currentColor"/></svg>
+              </span>
+              github.com/dioni-447
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar mensagem</button>
+          <p class="form-note">Este formulário abre seu aplicativo de e-mail com a mensagem pronta para envio — nenhum dado é armazenado neste site.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <strong>João Vitor Santos Goulart</strong>
+        <span>Estudante de Sistemas de Informação | Desenvolvimento de Software</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/dioni-447" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/joaovitorsgoulart/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:joaovitor.santos.goulart@gmail.com">E-mail</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="year"></span> João Vitor Santos Goulart. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobilePanel = document.getElementById('mobilePanel');
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = mobilePanel.classList.toggle('open');
+    hamburgerBtn.classList.toggle('open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+  mobilePanel.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      hamburgerBtn.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal on scroll (single subtle pass)
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Contact form -> mailto (no fake submission, no backend)
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const subject = encodeURIComponent('Contato via portfólio — ' + name);
+    const body = encodeURIComponent(message + '\n\n---\nNome: ' + name + '\nE-mail: ' + email);
+    window.location.href = 'mailto:joaovitor.santos.goulart@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
 </body>
 </html>
